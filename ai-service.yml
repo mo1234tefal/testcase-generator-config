@@ -45,5 +45,7 @@ info:
 logging:
   level:
     com:
-      tefal:
+      eazybytes:
         aiservice: DEBUG
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
