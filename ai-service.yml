@@ -27,10 +27,14 @@ management:
     health:
       probes:
         enabled: true
+    prometheus:
+      enabled: true
   info:
     env:
       enabled: true
-
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 info:
   app:
@@ -42,4 +46,4 @@ logging:
   level:
     com:
       tefal:
-        projects: DEBUG
+        aiservice: DEBUG
