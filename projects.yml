@@ -39,9 +39,14 @@ management:
     health:
       probes:
         enabled: true
+    prometheus:
+      enabled: true
   info:
     env:
       enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 
 info:
@@ -53,8 +58,10 @@ info:
 logging:
   level:
     com:
-      tefal:
+      eazybytes:
         projects: DEBUG
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
 
 
 
